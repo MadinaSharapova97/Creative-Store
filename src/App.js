@@ -5,6 +5,7 @@ import Products from "./pages/products/Products";
 import Footer from "./components/Footer";
 import Home from "./pages/home/Home";
 import CategoryBar from "./pages/categoryBar/CategoryBar";
+import CategoryPage from "./components/CategoryPage";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/category/:category" element={<CategoryBar />} />
+        <Route path="/category/:name" element={<CategoryBar />} />
       </Routes>
       <Footer />
     </>

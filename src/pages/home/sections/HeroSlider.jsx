@@ -64,7 +64,7 @@ const slides = [
 ];
 export default function HeroProductSlider() {
   return (
-    <div className="w-full h-[90vh]">
+    <div className="w-full h-[103vh] md:h-[90vh] overflow-hidden">
       <Swiper
         spaceBetween={0}
         centeredSlides={true}
@@ -82,7 +82,7 @@ export default function HeroProductSlider() {
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div
-              className="w-full h-[90vh] md:h-[76vh] flex flex-col md:flex-row items-center justify-between p-0 px-6 md:p-20"
+              className="w-full h-[90vh] md:h-[77vh] flex flex-col md:flex-row items-center justify-between pt-10 px-6 md:p-20"
               style={{ backgroundColor: slide.bgColor }}
             >
               {/* Left Content */}
