@@ -64,46 +64,45 @@ const slides = [
 ];
 export default function HeroProductSlider() {
   return (
-    <div className="w-full h-[103vh] md:h-[90vh] overflow-hidden">
+    <div className="w-full h-[100vh] overflow-hidden">
       <Swiper
         spaceBetween={0}
-        centeredSlides={true}
+        centeredSlides
         autoplay={{
           delay: 4000,
           disableOnInteraction: false,
         }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
+        speed={1200}
+        pagination={{ clickable: true }}
+        navigation
         modules={[Autoplay, Pagination, Navigation]}
-        className="h-full"
+        className="h-full relative"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div
-              className="w-full h-[90vh] md:h-[77vh] flex flex-col md:flex-row items-center justify-between pt-10 px-6 md:p-20"
+              className="w-full h-full flex flex-col md:flex-row items-center justify-between px-6 py-8 md:px-20"
               style={{ backgroundColor: slide.bgColor }}
             >
-              {/* Left Content */}
-              <div className="flex-1 text-center md:text-left">
+              {/* Left */}
+              <div className="flex-1 text-center md:text-left mt-12">
                 <h2 className="text-3xl md:text-5xl font-bold text-gray-800">
                   {slide.title}
                 </h2>
-                <p className="mt-4 text-gray-600 text-base md:text-lg max-w-md mx-auto md:mx-0">
+                <p className="mt-4 text-gray-600 max-w-md mx-auto md:mx-0">
                   {slide.desc}
                 </p>
-                <button className="mt-6 px-6 py-3 bg-gray-900 hover:bg-gray-800 text-white rounded-lg shadow-lg transition">
+                <button className="mt-6 px-6 py-3 bg-gray-900 text-white rounded-lg">
                   Shop Now
                 </button>
               </div>
 
-              {/* Right Product Image */}
+              {/* Right */}
               <div className="flex-1 flex items-center justify-center">
                 <img
                   src={slide.image}
                   alt={slide.title}
-                  className="w-[300px] md:w-[400px] object-contain"
+                  className="w-[280px] md:w-[420px] object-contain"
                 />
               </div>
             </div>

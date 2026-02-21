@@ -27,8 +27,8 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <FadeInSection className="">
-      <div className="max-w-7xl mx-auto px-4">
+    <FadeInSection>
+      <div className="max-w-7xl mx-auto px-4 py-8">
         
         {/* Title */}
         <div className="text-center mb-12">

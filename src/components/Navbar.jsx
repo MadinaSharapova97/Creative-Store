@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { Menu, X, ShoppingCart, User } from "lucide-react";
 
+import { useContextGlobal } from "../context/Context";
+
 export default function Navbar() {
+
+  const { cartItems } = useContextGlobal();
+
   const [open, setOpen] = useState(false);
 
   const links = [
@@ -13,11 +18,11 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white shadow-md  top-0 left-0 right-0 z-50">
+    <nav className="bg-white shadow-md  top-0 left-0 right-0 z-50 fixed">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="text-2xl font-bold text-indigo-600">MyShop</div>
+          <div className="text-2xl font-bold text-green-600">MyShop</div>
 
           {/* Desktop menu */}
           <div className="hidden md:flex space-x-6">
@@ -25,7 +30,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 hover:text-indigo-600 transition"
+                className="text-green-600 hover:text-green-800 transition"
               >
                 {link.name}
               </a>
@@ -37,7 +42,7 @@ export default function Navbar() {
             {/* Profile */}
             <a
               href="/profile"
-              className="flex items-center space-x-1 text-gray-700 hover:text-indigo-600 transition"
+              className="flex items-center space-x-1 text-green-600 hover:text-green-800 transition"
             >
               <User size={22} />
               <span className="hidden sm:inline">Profile</span>
@@ -46,19 +51,19 @@ export default function Navbar() {
             {/* Cart */}
             <a
               href="/cart"
-              className="relative text-gray-700 hover:text-indigo-600 transition"
+              className="relative text-green-600 hover:text-green-800 transition"
             >
               <ShoppingCart size={22} />
               {/* Badge */}
-              <span className="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full px-1">
-                3
+              <span className="absolute -top-[9px] -right-2 bg-green-600 text-white text-xs px-2 rounded-full">
+                {cartItems.length}
               </span>
             </a>
 
             {/* Mobile hamburger */}
             <div className="md:hidden">
               <button onClick={() => setOpen(!open)}>
-                {open ? <X size={28} /> : <Menu size={28} />}
+                {open ? <X size={28} className="text-green-600" /> : <Menu size={28} className="text-green-600" />}
               </button>
             </div>
           </div>
@@ -72,7 +77,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="block text-gray-700 hover:text-indigo-600 transition"
+              className="block text-green-600 hover:text-green-800 transition"
               onClick={() => setOpen(false)}
             >
               {link.name}

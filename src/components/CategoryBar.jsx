@@ -43,7 +43,7 @@ export default function CategoriesSection() {
                 className="object-contain w-full h-full group-hover:scale-110 transition-transform duration-300"
               />
             </div>
-            <p className="capitalize font-medium text-sm text-gray-700 text-center group-hover:text-green-600 transition-colors duration-300">
+            <p className="capitalize font-medium text-sm text-green-600 text-center group-hover:text-green-800 transition-colors duration-300">
               {category.name}
             </p>
           </div>

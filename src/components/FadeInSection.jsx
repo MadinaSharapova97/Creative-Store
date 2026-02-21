@@ -2,8 +2,8 @@ import { useInView } from "react-intersection-observer";
 
 export default function FadeInSection({ children, className = "" }) {
   const { ref, inView } = useInView({
-    triggerOnce: true, // faqat 1 marta ishlaydi
-    threshold: 0.5,    // 20% ko‘ringanda
+    triggerOnce: true, 
+    threshold: 0.2,   
   });
 
   return (

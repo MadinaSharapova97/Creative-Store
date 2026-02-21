@@ -8,6 +8,7 @@ import DealsOfTheDay from "./sections/DealsOfTheDay";
 import FeaturedCategories from "./sections/FeaturedCategories";
 import WhyChooseUs from "./sections/WhyChooseUs";
 import PartnerBrands from "./sections/PartnerBrands";
+import Testimonials from "./sections/Testimonials";
 
 export default function Home() {
     const [selectedCategory, setSelectedCategory] = useState(null);
@@ -16,14 +17,14 @@ export default function Home() {
     return (
         <div className="w-full">
             {/* Kategoriya bo‘limi */}
-            <CategoryBar onSelectCategory={setSelectedCategory} />
             <HeroSlider />
+            <CategoryBar onSelectCategory={setSelectedCategory} />
             <DealsOfTheDay />
             <BestSellers />
             <FeaturedCategories />
             <WhyChooseUs />
             <PartnerBrands />
-
+            <Testimonials />
         
         </div>
     );
