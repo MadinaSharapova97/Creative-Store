@@ -27,7 +27,7 @@ export default function CategoriesSection() {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-3">
+    <section className="max-w-7xl mx-auto px-4 py-2">
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-8 gap-6">
         {categories.map((category, index) => (

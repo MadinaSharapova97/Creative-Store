@@ -1,11 +1,11 @@
 .swiper-pagination-bullet {
-    background: rgb(163, 155, 155) !important;
+    background: rgb(254, 253, 253) !important;
     /* oddiy nuqtalar */
     opacity: 0.7;
 }
 
 .swiper-pagination-bullet-active {
-    background: rgb(209, 202, 202) !important;
+    background: rgb(255, 255, 255) !important;
     /* aktiv nuqta */
     opacity: 1;
 }

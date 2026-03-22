@@ -1,70 +1,47 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import './swiper.css'
-
+import { useNavigate } from "react-router-dom";
+import "./swiper.css";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // images
-import heroImg1 from "../../../assets/images/fashion.png";
-import heroImg2 from "../../../assets/images/IMAGE (1).png";
-import heroImg3 from "../../../assets/images/chair.png";
-import heroImg4 from "../../../assets/images/Xbox.png";
-import heroImg5 from "../../../assets/images/shoe.png";
-import heroImg6 from "../../../assets/images/parfume.png";
+import desktop1 from "../../../assets/heroSlide/desktop1.jpg";
+import desktop2 from "../../../assets/heroSlide/desktop2.png";
+import desktop3 from "../../../assets/heroSlide/desktop3.jpg";
+import desktop4 from "../../../assets/heroSlide/desktop4.jpg";
+import desktop5 from "../../../assets/heroSlide/desktop5.jpg";
+import desktop6 from "../../../assets/heroSlide/desktop6.jpg";
+import desktop7 from "../../../assets/heroSlide/desktop7.jpg";
+import desktop8 from "../../../assets/heroSlide/desktop8.jpg";
+import desktop9 from "../../../assets/heroSlide/desktop9.jpg";
+import desktop10 from "../../../assets/heroSlide/desktop10.jpg";
 
+
+import mobile2 from "../../../assets/heroSlide/mobileIMG2.jpg"
+import mobile3 from "../../../assets/heroSlide/mobileIMG3.jpg";
 
 const slides = [
-  {
-    id: 1,
-    title: "Urban Street Fashion",
-    desc: "Upgrade your everyday look with our new streetwear collection — stylish, bold, and comfortable.",
-    image: heroImg1,
-    bgColor: "#fef3c7", // soft yellow tone
-  },
-  {
-    id: 2,
-    title: "Premium Smartwatch",
-    desc: "Stay connected and in control — monitor your health, track your activity, and keep time in style.",
-    image: heroImg2,
-    bgColor: "#f1f4f0", // elegant gray tone
-  },
-  
-  {
-    id: 3,
-    title: "Smart Ergonomic Furniture",
-    desc: "Experience comfort and productivity with an ergonomic design built for long working hours.",
-    image: heroImg3,
-    bgColor: "#aaeb9c", // light purple
-  },
-  {
-    id: 4,
-    title: "Next-Gen Gaming Console",
-    desc: "Feel the power of performance and speed — your ultimate gaming experience starts here.",
-    image: heroImg4,
-    bgColor: "#d3d9ff", // light green
-  },
-  {
-    id: 5,
-    title: "Lightweight Running Shoes",
-    desc: "Run faster and further with breathable comfort and superior grip designed for all terrains.",
-    image: heroImg5,
-    bgColor: "#fee2e2", // soft red tone
-  },
-  {
-    id: 6,
-    title: "Luxury Eau de Parfum",
-    desc: "Unleash your confidence with an unforgettable fragrance that defines sophistication and charm.",
-    image: heroImg6,
-    bgColor: "#e7e5e3", // warm neutral
-  },
+  { id: 1, desktop: desktop1, mobile: mobile2, slug: "beauty" },
+  { id: 2, desktop: desktop2, mobile: mobile3, slug: "furniture" },
+  { id: 3, desktop: desktop3, mobile: mobile2, slug: "mens-shirts" },
+  { id: 4, desktop: desktop4, mobile: mobile3, slug: "mobile-accessories" },
+  { id: 5, desktop: desktop5, mobile: mobile3, slug: "smartphones" },
+  { id: 6, desktop: desktop6, mobile: mobile3, slug: "womens-dresses" },
+  { id: 7, desktop: desktop7, mobile: mobile3, slug: "womens-jewellery" },
+  { id: 8, desktop: desktop8, mobile: mobile3, slug: "kitchen-accessories" },
+  { id: 9, desktop: desktop9, mobile: mobile3, slug: "laptops" },
+  { id: 10, desktop: desktop10, mobile: mobile3, slug: "mens-watches" },
 ];
+
 export default function HeroProductSlider() {
+  const navigate = useNavigate();
+
   return (
-    <div className="w-full h-[100vh] overflow-hidden">
+    <div className="w-full h-[500px] md:h-[435px] overflow-hidden">
       <Swiper
         spaceBetween={0}
         centeredSlides
@@ -76,36 +53,33 @@ export default function HeroProductSlider() {
         pagination={{ clickable: true }}
         navigation
         modules={[Autoplay, Pagination, Navigation]}
-        className="h-full relative"
+        className="h-full"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div
-              className="w-full h-full flex flex-col md:flex-row items-center justify-between px-6 py-8 md:px-20"
-              style={{ backgroundColor: slide.bgColor }}
-            >
-              {/* Left */}
-              <div className="flex-1 text-center md:text-left mt-12">
-                <h2 className="text-3xl md:text-5xl font-bold text-gray-800">
-                  {slide.title}
-                </h2>
-                <p className="mt-4 text-gray-600 max-w-md mx-auto md:mx-0">
-                  {slide.desc}
-                </p>
-                <button className="mt-6 px-6 py-3 bg-gray-900 text-white rounded-lg">
-                  Shop Now
-                </button>
-              </div>
 
-              {/* Right */}
-              <div className="flex-1 flex items-center justify-center">
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="w-[280px] md:w-[420px] object-contain"
-                />
-              </div>
+            <div
+              className="relative w-full h-full cursor-pointer"
+              onClick={() => navigate(`/category/${slide.slug}`)}
+            >
+              {/* Desktop image */}
+              <img
+                src={slide.desktop}
+                alt="hero-slide-desktop"
+                className="hidden md:block w-full h-full object-cover"
+              />
+
+              {/* Mobile image */}
+              <img
+                src={slide.mobile}
+                alt="hero-slide-mobile"
+                className="block md:hidden w-full h-full object-cover"
+              />
+
+              {/* Optional hover effect */}
+              <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition duration-300"></div>
             </div>
+
           </SwiperSlide>
         ))}
       </Swiper>

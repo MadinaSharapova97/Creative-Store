@@ -12,6 +12,7 @@ import { ContextProvider } from "./context/Context";
 import Cart from "./pages/cart/Cart";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/profile/Profile";
+import SignInModal from "./components/SignInModal";
 
 export default function App() {
   return (
@@ -22,14 +23,12 @@ export default function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/category/:category" element={<CategoryBar />} />
-        {/* <Route path="/category/:name" element={<CategoryBar />} /> */}
         <Route path="/about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="signin" element={<SignInModal />} />
         <Route path="/profile" element={<ProtectedRoute> <Profile /> </ProtectedRoute>}
         />
-
-
       </Routes>
       <Footer />
     </ContextProvider>

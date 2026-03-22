@@ -18,7 +18,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white shadow-md  top-0 left-0 right-0 z-50 fixed">
+    <nav className="bg-white shadow-md top-0 left-0 right-0 z-50 fixed">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -40,6 +40,12 @@ export default function Navbar() {
           {/* Right side: Profile + Cart */}
           <div className="flex items-center space-x-4">
             {/* Profile */}
+            <a
+              href="/signin"
+              className="flex items-center space-x-1 text-green-600 hover:text-green-800 transition"
+            >
+              <span>Sign In</span>
+            </a>
             <a
               href="/profile"
               className="flex items-center space-x-1 text-green-600 hover:text-green-800 transition"

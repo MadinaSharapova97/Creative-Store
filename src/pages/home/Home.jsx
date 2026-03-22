@@ -15,7 +15,7 @@ export default function Home() {
     const { data, isLoading } = getProductsByCategory(selectedCategory);
 
     return (
-        <div className="w-full">
+        <div className="w-full pt-[56px]">
             {/* Kategoriya bo‘limi */}
             <HeroSlider />
             <CategoryBar onSelectCategory={setSelectedCategory} />

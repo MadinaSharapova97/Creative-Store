@@ -1,33 +1,54 @@
-import React from "react";
+import { useState } from "react";
 import { useContextGlobal } from "../../context/Context";
+import SignInModal from "../../components/SignInModal";
 
 export default function Profile() {
-  const { user, logout } = useContextGlobal();
+  const { user } = useContextGlobal();
+  const [activeTab, setActiveTab] = useState("orders");
+  const [showModal, setShowModal] = useState(false);
+
+  const handleTabClick = (tab) => {
+    if (!user) {
+      setShowModal(true);
+      return;
+    }
+    setActiveTab(tab);
+  };
 
   return (
-    <div className="min-h-[70vh] flex items-center justify-center px-4">
-      <div className="bg-white shadow-lg rounded-xl p-6 w-full max-w-md text-center">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800">
-          My Profile
-        </h2>
+    <div className="min-h-[70vh] p-6">
+      <h1 className="text-2xl font-bold mb-6">My Profile</h1>
 
-        <p className="text-gray-600 mb-2">
-          <span className="font-medium">Username:</span>{" "}
-          {user?.username}
-        </p>
+      {/* Tabs */}
+      <div className="flex gap-4 mb-6">
+        <button onClick={() => handleTabClick("orders")}>
+          My Orders
+        </button>
 
-        <p className="text-gray-600 mb-6">
-          <span className="font-medium">Email:</span>{" "}
-          {user?.email}
-        </p>
+        <button onClick={() => handleTabClick("chats")}>
+          My Chats
+        </button>
 
-        <button
-          onClick={logout}
-          className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg transition"
-        >
-          Logout
+        <button onClick={() => handleTabClick("settings")}>
+          Settings
         </button>
       </div>
+
+      {/* Content */}
+      <div className="border p-4 rounded-lg">
+        {user ? (
+          <>
+            {activeTab === "orders" && <p>Your orders here...</p>}
+            {activeTab === "chats" && <p>Your chats here...</p>}
+            {activeTab === "settings" && <p>Settings here...</p>}
+          </>
+        ) : (
+          <p>Please sign in to view this section</p>
+        )}
+      </div>
+
+      {/* Modal */}
+      {showModal && <SignInModal onClose={() => setShowModal(false)} />}
     </div>
   );
 }

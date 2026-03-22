@@ -18,7 +18,7 @@ export default function Login() {
       await login(data);
       navigate("/");
     } catch (err) {
-      alert("Username yoki parol noto'g'ri");
+      alert("Something went wrong. Please try again.");
     }
   };
 
