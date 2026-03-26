@@ -13,6 +13,8 @@ import Cart from "./pages/cart/Cart";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/profile/Profile";
 import SignInModal from "./components/SignInModal";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/register";
 
 export default function App() {
   return (
@@ -26,8 +28,9 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="signin" element={<SignInModal />} />
-        <Route path="/profile" element={<ProtectedRoute> <Profile /> </ProtectedRoute>}
+        <Route path="register" element={<Register />} />
+        <Route path="login" element={<Login />} />
+        <Route path="/profile" element={<Profile />}
         />
       </Routes>
       <Footer />

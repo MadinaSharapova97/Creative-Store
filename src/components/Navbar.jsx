@@ -41,17 +41,23 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
             {/* Profile */}
             <a
-              href="/signin"
+              href="/login"
               className="flex items-center space-x-1 text-green-600 hover:text-green-800 transition"
             >
               <span>Sign In</span>
+            </a>
+            <a
+              href="/register"
+              className="flex items-center space-x-1 text-green-600 hover:text-green-800 transition"
+            >
+              <span>Sign Up</span>
             </a>
             <a
               href="/profile"
               className="flex items-center space-x-1 text-green-600 hover:text-green-800 transition"
             >
               <User size={22} />
-              <span className="hidden sm:inline">Profile</span>
+              {/* <span className="hidden sm:inline">Profile</span> */}
             </a>
 
             {/* Cart */}

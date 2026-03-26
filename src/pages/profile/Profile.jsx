@@ -16,7 +16,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="min-h-[70vh] p-6">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
       <h1 className="text-2xl font-bold mb-6">My Profile</h1>
 
       {/* Tabs */}
