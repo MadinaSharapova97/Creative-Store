@@ -14,54 +14,34 @@ export default function Login() {
   });
 
   const mutation = useMutation({
-    mutationFn: async (form) => {
-      const savedUser = JSON.parse(localStorage.getItem("registeredUser"));
-
-      if (
-        savedUser &&
-        savedUser.username === form.username &&
-        savedUser.password === form.password
-      ) {
-        return {
-          id: 1,
-          username: savedUser.username,
-          email: savedUser.email,
-          token: "fake-token",
-
-        };
-      } else {
-        throw new Error("Login failed");
-        console.log("Saved : ", savedUser);
-      }
-    },
-
+    mutationFn: loginUser,
+  
     onSuccess: (data) => {
+      console.log("SUCCESS:", data);
+  
       localStorage.setItem("user", JSON.stringify(data));
       setUser(data);
+  
       navigate("/profile");
     },
-
-    onError: () => {
-      alert("Login failed: Invalid username or password");
-
+  
+    onError: (error) => {
+      console.log("ERROR:", error);
+      alert("Login failed!");
     },
-
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     mutation.mutate(form);
-    console.log("Form : ", form);
-
   };
-
 
   return (
     <div className="min-h-screen flex items-center justify-center">
       <form onSubmit={handleSubmit} className="w-[300px] space-y-3">
         <input
-          name="username"
-          placeholder="Username"
+          value={form.username}
+          placeholder="emilys"
           onChange={(e) =>
             setForm({ ...form, username: e.target.value })
           }
@@ -69,9 +49,9 @@ export default function Login() {
         />
 
         <input
+          value={form.password}
           type="password"
-          name="password"
-          placeholder="Password"
+          placeholder="emilyspass"
           onChange={(e) =>
             setForm({ ...form, password: e.target.value })
           }

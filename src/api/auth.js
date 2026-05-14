@@ -1,4 +1,4 @@
-// LOGIN
+// LOGIN (REAL)
 export async function loginUser(credentials) {
   const res = await fetch("https://dummyjson.com/auth/login", {
     method: "POST",
@@ -6,12 +6,17 @@ export async function loginUser(credentials) {
     body: JSON.stringify(credentials),
   });
 
-  if (!res.ok) throw new Error("Login failed");
 
-  return res.json();
+  const data = await res.json(); 
+
+  if (!res.ok) {
+    throw new Error(data.message || "Login failed");
+  }
+
+  return data;
 }
 
-// REGISTER (fake)
+// REGISTER (FAKE)
 export async function registerUser(userData) {
   const res = await fetch("https://dummyjson.com/users/add", {
     method: "POST",
@@ -19,13 +24,9 @@ export async function registerUser(userData) {
     body: JSON.stringify(userData),
   });
 
-  // if (!res.ok) throw new Error("Register failed");
+  if (!res.ok) {
+    throw new Error("Register failed");
+  }
 
-  // return res.json();
-
-
-  const data = await res.json();
-  console.log("REGISTER RESPONSE:", data);
-
-  return data;
+  return res.json();
 }

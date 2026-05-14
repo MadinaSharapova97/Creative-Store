@@ -8,23 +8,23 @@ export default function Register() {
 
   const [form, setForm] = useState({
     username: "",
-    firstname: "",
-    lastName: "",
-    email: "",
     password: "",
+    email: "",
   });
 
   const mutation = useMutation({
     mutationFn: registerUser,
-    onSuccess: () => {
-      localStorage.setItem("registeredUser", JSON.stringify(form));
+    onSuccess: (data) => {
+      console.log("Registered:", data);
+
+      // alert("User created! Endi login qiling.");
+
       navigate("/login");
     },
     onError: () => {
       alert("Register failed");
     },
   });
-  console.log(form);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,29 +35,16 @@ export default function Register() {
     <div className="min-h-screen flex items-center justify-center">
       <form onSubmit={handleSubmit} className="w-[300px] space-y-3">
         <input
+          value={form.username}
           placeholder="Username"
           onChange={(e) =>
             setForm({ ...form, username: e.target.value })
           }
           className="w-full p-2 border"
         />
-        <input
-          placeholder="First Name"
-          onChange={(e) =>
-            setForm({ ...form, firstName: e.target.value })
-          }
-          className="w-full p-2 border"
-        />
 
         <input
-          placeholder="Last Name"
-          onChange={(e) =>
-            setForm({ ...form, lastName: e.target.value })
-          }
-          className="w-full p-2 border"
-        />
-
-        <input
+          value={form.email}
           placeholder="Email"
           onChange={(e) =>
             setForm({ ...form, email: e.target.value })
@@ -66,6 +53,7 @@ export default function Register() {
         />
 
         <input
+          value={form.password}
           type="password"
           placeholder="Password"
           onChange={(e) =>

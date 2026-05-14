@@ -10,19 +10,7 @@ import {
 
 export default function Contact() {
   return (
-    <div className="w-full">
-
-      {/* HERO */}
-      <section className="bg-green-600 text-white py-16 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            Contact Us
-          </h1>
-          <p className="max-w-2xl mx-auto text-green-100 text-base md:text-lg">
-            Have questions or need help? We’re here for you.
-          </p>
-        </div>
-      </section>
+    <div className="w-full pt-20">
 
       {/* CONTACT CONTENT */}
       <section className="py-14 px-4">

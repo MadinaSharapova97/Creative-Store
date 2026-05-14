@@ -12,24 +12,10 @@ export function ContextProvider({ children }) {
     return saved ? JSON.parse(saved) : null;
   });
 
-  const login = async (credentials) => {
-    const data = await loginUser(credentials);
-
-    const userData = {
-      id: data.id,
-      username: data.username,
-      email: data.email,
-      token: data.token,
-    };
-    setUser(userData);
-    localStorage.setItem("user", JSON.stringify(userData));
-  };
-
   const logout = () => {
     setUser(null);
     localStorage.removeItem("user");
   };
-
 
 
   //cart
@@ -66,7 +52,7 @@ export function ContextProvider({ children }) {
   return (
     <Context.Provider value={{
       user,
-      login,
+      setUser,
       logout,
       cartItems,
       addToCart,

@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import { Menu, X, ShoppingCart, User } from "lucide-react";
 
 import { useContextGlobal } from "../context/Context";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-
-  const { cartItems } = useContextGlobal();
-
+  const navigate = useNavigate();
+  const { cartItems, user } = useContextGlobal();
+  const handleProfileClick = () => {
+    if (user) {
+      navigate("/profile");
+    } else {
+      navigate("/register");
+    }
+  };
   const [open, setOpen] = useState(false);
 
   const links = [
@@ -52,13 +59,12 @@ export default function Navbar() {
             >
               <span>Sign Up</span>
             </a>
-            <a
-              href="/profile"
-              className="flex items-center space-x-1 text-green-600 hover:text-green-800 transition"
+            <div
+              onClick={handleProfileClick}
+              className="flex items-center space-x-1 text-green-600 hover:text-green-800 transition cursor-pointer"
             >
               <User size={22} />
-              {/* <span className="hidden sm:inline">Profile</span> */}
-            </a>
+            </div>
 
             {/* Cart */}
             <a

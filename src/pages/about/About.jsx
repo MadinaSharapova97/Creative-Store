@@ -5,21 +5,8 @@ export default function About() {
   return (
     <div className="w-full">
 
-      {/* HERO */}
-      <section className="bg-green-600 text-white py-16 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            About Our Store
-          </h1>
-          <p className="max-w-2xl mx-auto text-green-100 text-base md:text-lg">
-            We are committed to providing high-quality products, affordable
-            prices, and a seamless shopping experience for everyone.
-          </p>
-        </div>
-      </section>
-
       {/* ABOUT CONTENT */}
-      <section className="py-14 px-4">
+      <section className="pt-20 pb-14  px-4">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           
           {/* TEXT */}

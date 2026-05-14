@@ -30,8 +30,8 @@ export default function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
-        <Route path="/profile" element={<Profile />}
-        />
+        <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+
       </Routes>
       <Footer />
     </ContextProvider>
