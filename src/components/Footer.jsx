@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Instagram,
   Send,
@@ -28,22 +29,62 @@ export default function Footer() {
           {/* Navigation */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Navigation</h4>
+
             <ul className="space-y-2 text-sm">
-              <li><a href="/" className="hover:underline">Home</a></li>
-              <li><a href="/" className="hover:underline">Shop</a></li>
-              <li><a href="/" className="hover:underline">Best Sellers</a></li>
-              <li><a href="/" className="hover:underline">Deals</a></li>
+              <li>
+                <Link to="/" className="hover:underline">
+                  Home
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/products" className="hover:underline">
+                  Shop
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/products" className="hover:underline">
+                  Best Sellers
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/products" className="hover:underline">
+                  Deals
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Products */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Products</h4>
+
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:underline">Men's Collection</a></li>
-              <li><a href="#" className="hover:underline">Women's Collection</a></li>
-              <li><a href="#" className="hover:underline">Mobile Accessories</a></li>
-              <li><a href="#" className="hover:underline">Electronics</a></li>
+              <li>
+                <Link to="/products" className="hover:underline">
+                  Men's Collection
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/products" className="hover:underline">
+                  Women's Collection
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/products" className="hover:underline">
+                  Mobile Accessories
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/products" className="hover:underline">
+                  Electronics
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -65,16 +106,39 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="flex gap-4 mt-6">
-              <a href="#" className="hover:opacity-80 transition">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition"
+              >
                 <Instagram />
               </a>
-              <a href="#" className="hover:opacity-80 transition">
-                <Send /> {/* Telegram */}
+
+              <a
+                href="https://t.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition"
+              >
+                <Send />
               </a>
-              <a href="#" className="hover:opacity-80 transition">
+
+              <a
+                href="https://www.tiktok.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition"
+              >
                 <SiTiktok size={22} />
               </a>
-              <a href="#" className="hover:opacity-80 transition">
+
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition"
+              >
                 <Twitter />
               </a>
             </div>
