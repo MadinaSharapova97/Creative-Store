@@ -12,7 +12,6 @@ import { ContextProvider } from "./context/Context";
 import Cart from "./pages/cart/Cart";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/profile/Profile";
-import SignInModal from "./components/SignInModal";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/register";
 

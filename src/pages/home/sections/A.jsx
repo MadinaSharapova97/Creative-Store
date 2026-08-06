@@ -5,6 +5,12 @@ import desktop1 from "../../../assets/heroSlide/desktop1.png";
 import desktop2 from "../../../assets/heroSlide/desktop2.png";
 import desktop3 from "../../../assets/heroSlide/desktop3.png";
 import desktop4 from "../../../assets/heroSlide/desktop4.png";
+import desktop5 from "../../../assets/heroSlide/desktop5.png";
+import desktop6 from "../../../assets/heroSlide/desktop6.png";
+import desktop7 from "../../../assets/heroSlide/desktop7.png";
+import desktop8 from "../../../assets/heroSlide/desktop8.png";
+import desktop9 from "../../../assets/heroSlide/desktop9.png";
+import desktop10 from "../../../assets/heroSlide/desktop10.png";
 import './swiper.css'
 
 import "swiper/css";
@@ -16,16 +22,16 @@ export default function HeroProductSlider() {
     const navigate = useNavigate();
 
     const slides = [
-        { id: 1, title: "Urban Street Fashion", desc: "Upgrade your everyday look with our new streetwear collection — stylish, bold, and comfortable.", image: desktop1, slug: "beauty" },
-        { id: 2, title: "Premium Smartwatch", desc: "Stay connected and in control — monitor your health, track your activity, and keep time in style.", image: desktop2, slug: "furniture" },
-        { id: 3, title: "Smart Ergonomic Furniture", desc: "Experience comfort and productivity with an ergonomic design built for long working hours.", image: desktop3, slug: "mens-shirts" },
-        { id: 4, title: "Next-Gen Gaming Console", desc: "Feel the power of performance and speed — your ultimate gaming experience starts here.", image: desktop4, slug: "mobile-accessories" },
-        { id: 5, title: "Lightweight Running Shoes", desc: "Run faster and further with breathable comfort and superior grip designed for all terrains.", image: desktop1, slug: "smartphones" },
-        { id: 6, title: "Luxury Eau de Parfum", desc: "Unleash your confidence with an unforgettable fragrance that defines sophistication and charm.", image: desktop1, slug: "womens-dresses" },
-        { id: 7, title: "Luxury Eau de Parfum", desc: "Unleash your confidence with an unforgettable fragrance that defines sophistication and charm.", image: desktop1, slug: "womens-jewellery" },
-        { id: 8, title: "Luxury Eau de Parfum", desc: "Unleash your confidence with an unforgettable fragrance that defines sophistication and charm.", image: desktop1, slug: "mens-shoes" },
-        { id: 9, title: "Luxury Eau de Parfum", desc: "Unleash your confidence with an unforgettable fragrance that defines sophistication and charm.", image: desktop1, slug: "kitchen-accessories" },
-        { id: 10, title: "Luxury Eau de Parfum", desc: "Unleash your confidence with an unforgettable fragrance that defines sophistication and charm.", image: desktop1, slug: "smartphones" },
+        { id: 1, title: "Beauty Essentials", desc: "Discover premium skincare, makeup, and fragrances designed to enhance your natural beauty every day.", image: desktop1, slug: "beauty" },
+        { id: 2, title: "Modern Furniture", desc: "Transform your home with stylish, functional furniture crafted for comfort, elegance, and everyday living.", image: desktop2, slug: "furniture" },
+        { id: 3, title: "Men's Shirts Collection", desc: "Refresh your wardrobe with premium shirts that combine modern style, comfort, and effortless confidence.", image: desktop3, slug: "mens-shirts" },
+        { id: 4, title: "Mobile Accessories", desc: "Upgrade your devices with durable chargers, cases, earbuds, and smart accessories for every lifestyle.", image: desktop4, slug: "mobile-accessories" },
+        { id: 5, title: "Latest Smartphones", desc: "Explore cutting-edge smartphones featuring powerful performance, stunning displays, and advanced cameras.", image: desktop5, slug: "smartphones" },
+        { id: 6, title: "Women's Dresses", desc: "Find elegant dresses for every occasion, from casual daytime styles to timeless evening collections.", image: desktop6, slug: "womens-dresses" },
+        { id: 7, title: "Women's Jewellery", desc: "Complete your look with beautifully crafted necklaces, rings, earrings, and bracelets made to shine.", image: desktop7, slug: "womens-jewellery" },
+        { id: 8, title: "Men's Shoes", desc: "Step into confidence with premium shoes that deliver exceptional comfort, quality, and timeless style.", image: desktop8, slug: "mens-shoes" },
+        { id: 9, title: "Kitchen Accessories", desc: "Cook smarter with practical kitchen essentials designed to make every meal easier and more enjoyable.", image: desktop9, slug: "kitchen-accessories" },
+        { id: 10, title: "Home Decoration",desc:"Bring warmth and personality to your space with elegant décor pieces that inspire modern living.",  image: desktop10, slug: "home-decoration" },
     ];
 
     return (

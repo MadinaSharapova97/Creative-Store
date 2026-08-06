@@ -29,10 +29,10 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Navigation</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:underline">Home</a></li>
-              <li><a href="#" className="hover:underline">Shop</a></li>
-              <li><a href="#" className="hover:underline">Best Sellers</a></li>
-              <li><a href="#" className="hover:underline">Deals</a></li>
+              <li><a href="/" className="hover:underline">Home</a></li>
+              <li><a href="/" className="hover:underline">Shop</a></li>
+              <li><a href="/" className="hover:underline">Best Sellers</a></li>
+              <li><a href="/" className="hover:underline">Deals</a></li>
             </ul>
           </div>
 

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import CategoryBar from "../../components/CategoryBar";
-import { getProductsByCategory } from "../../api/products";
-import Loader from "../../components/Loader";
 import BestSellers from "./sections/BestSellers";
 import DealsOfTheDay from "./sections/DealsOfTheDay";
 import FeaturedCategories from "./sections/FeaturedCategories";
@@ -11,8 +9,7 @@ import Testimonials from "./sections/Testimonials";
 import A from "./sections/A"
 
 export default function Home() {
-    const [selectedCategory, setSelectedCategory] = useState(null);
-    const { data, isLoading } = getProductsByCategory(selectedCategory);
+    const [ setSelectedCategory] = useState(null);
 
     return (
         <div className="w-full pt-[56px]">

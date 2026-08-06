@@ -1,57 +1,85 @@
 import React from "react";
-import ProductCard from "../../../components/ProductCard";
 import FadeInSection from "../../../components/FadeInSection";
-import img1 from "../../../assets/images/phone.jpg";
-import img2 from "../../../assets/images/bag.jpg";
-import img3 from "../../../assets/images/womenshoe.jpg";
+import img1 from "../../../assets/images/card10.png";
+import img2 from "../../../assets/images/card11.png";
+// import img3 from "../../../assets/images/card11.png";
+import { useNavigate } from "react-router-dom";
 
 
-const deals = [
+const collections = [
     {
         id: 1,
-        title: "Lorem, ipsum dolor.",
-        price: "49.99",
-        oldPrice: "69.99",
-        thumbnail: img1,
+        title: "Summer Collection",
+        image: img1,
+        slug: "mens-shirts",
     },
     {
         id: 2,
-        title: "Lorem, ipsum dolor.",
-        price: "39.99",
-        oldPrice: "59.99",
-        thumbnail: img2,
+        title: "Camping Essentials",
+        image: img2,
+        slug: "mens-shoes",
     },
     {
         id: 3,
-        title: "Lorem, ipsum dolor.",
-        price: "89.99",
-        oldPrice: "129.99",
-        thumbnail: img3,
+        title: "Beach Collection",
+        image: img2,
+        slug: "sunglasses",
     },
-
 ];
 
-const DealsOfTheDay = () => {
+export default function DealsOfTheDay() {
+    const navigate = useNavigate();
+
     return (
-        <section className="py-10 px-5 md:px-12 bg-red-100">
-            {/* TITLE */}
-            <FadeInSection className="flex items-center justify-between mb-8">
-                <h2 className="text-3xl font-bold flex items-center gap-2 text-green-600">
+        <section className="py-12 px-5 md:px-12 bg-[#fff8e7]">
+
+            <FadeInSection className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-10">
+                <h2 className="text-3xl font-bold text-[#16a34a]">
                     Deals of the Day
                 </h2>
-                <div className="bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold">
-                    Ends in: <span className="font-bold">04:23:45</span>
+
+                <div className="w-[145px] bg-red-500 text-white px-5 py-2 rounded-xl font-semibold shadow">
+                    Ends in: 04:23:45
                 </div>
             </FadeInSection>
 
-            {/* GRID */}
-            <FadeInSection className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {deals.map((item) => (
-                   <ProductCard key={item.id} product={item}/>   
+            <FadeInSection className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+
+                {collections.map((item) => (
+
+                    <div
+                        key={item.id}
+                        onClick={() => navigate(`/category/${item.slug}`)}
+                        className="group cursor-pointer"
+                    >
+
+                        <div className="transition-all duration-500 overflow-hidden">
+
+                              <div className="h-[320px] flex items-center justify-center">
+                              <img
+                                    src={item.image}
+                                    alt={item.title}
+                                    className="h-full object-cover p-4 transition-transform duration-500 group-hover:scale-110"
+                                />
+                              </div>
+
+                            <div className=" text-center">
+
+                                <h3 className="text-xl font-semibold text-[#16a34a]">
+                                    {item.title}
+                                </h3>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
                 ))}
+
             </FadeInSection>
+
         </section>
     );
-};
-
-export default DealsOfTheDay;
+}

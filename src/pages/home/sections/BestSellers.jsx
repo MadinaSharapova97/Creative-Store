@@ -1,14 +1,14 @@
 import React from "react";
 import FadeInSection from "../../../components/FadeInSection";
-import img1 from "../../../assets/images/hat.jpg";
-import img2 from "../../../assets/images/shoe.jpg";
-import img3 from "../../../assets/images/parfume.jpg";
-import img4 from "../../../assets/images/bag.jpg";
-import img5 from "../../../assets/images/suit.jpg";
-import img6 from "../../../assets/images/womenshoe.jpg";
-import img7 from "../../../assets/images/suit2.jpg";
-import img8 from "../../../assets/images/phone.jpg";
-import img9 from "../../../assets/images/jewelry.jpg";
+import img1 from "../../../assets/images/card1.png";
+import img2 from "../../../assets/images/card2.png";
+import img3 from "../../../assets/images/card3.png";
+import img4 from "../../../assets/images/card4.png";
+import img5 from "../../../assets/images/card5.png";
+import img6 from "../../../assets/images/card6.png";
+import img7 from "../../../assets/images/card7.png";
+import img8 from "../../../assets/images/card8.png";
+import img9 from "../../../assets/images/card9.png";
 import ProductCard from "../../../components/ProductCard";
 
 export default function BestSellersSlider() {
@@ -25,7 +25,7 @@ export default function BestSellersSlider() {
   ];
 
   return (
-    <div className="bg-yellow-100 py-10">
+    <div className="bg-[#fff8e7] py-10">
       <FadeInSection className="max-w-7xl mx-auto px-4 pb-10 ">
         {/* Section Title */}
         <div className="flex justify-between items-center mb-8">
