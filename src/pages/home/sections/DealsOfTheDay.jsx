@@ -1,8 +1,8 @@
 import React from "react";
 import FadeInSection from "../../../components/FadeInSection";
-import img1 from "../../../assets/images/card10.png";
-import img2 from "../../../assets/images/card11.png";
-// import img3 from "../../../assets/images/card11.png";
+import img1 from "../../../assets/images/card10.webp";
+import img2 from "../../../assets/images/card11.webp";
+import img3 from "../../../assets/images/card12.webp";
 import { useNavigate } from "react-router-dom";
 
 
@@ -22,7 +22,7 @@ const collections = [
     {
         id: 3,
         title: "Beach Collection",
-        image: img2,
+        image: img3,
         slug: "sunglasses",
     },
 ];

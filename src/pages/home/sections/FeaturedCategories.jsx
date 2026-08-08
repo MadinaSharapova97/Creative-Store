@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Rasmlar
-import img1 from "../../../assets/images/suit.jpg";
-import img2 from "../../../assets/images/hat.jpg";
-import img3 from "../../../assets/images/phone.jpg";
-import img4 from "../../../assets/images/motorcycle.jpg";
+import img1 from "../../../assets/images/suit.webp";
+import img2 from "../../../assets/images/hat.webp";
+import img3 from "../../../assets/images/phone.webp";
+import img4 from "../../../assets/images/motorcycle.webp";
 import FadeInSection from "../../../components/FadeInSection";
 
 export default function FeaturedCategories() {

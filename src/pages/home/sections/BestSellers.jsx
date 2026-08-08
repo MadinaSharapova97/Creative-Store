@@ -1,14 +1,14 @@
 import React from "react";
 import FadeInSection from "../../../components/FadeInSection";
-import img1 from "../../../assets/images/card1.png";
-import img2 from "../../../assets/images/card2.png";
-import img3 from "../../../assets/images/card3.png";
-import img4 from "../../../assets/images/card4.png";
-import img5 from "../../../assets/images/card5.png";
-import img6 from "../../../assets/images/card6.png";
-import img7 from "../../../assets/images/card7.png";
-import img8 from "../../../assets/images/card8.png";
-import img9 from "../../../assets/images/card9.png";
+import img1 from "../../../assets/images/card1.webp";
+import img2 from "../../../assets/images/card2.webp";
+import img3 from "../../../assets/images/card3.webp";
+import img4 from "../../../assets/images/card4.webp";
+import img5 from "../../../assets/images/card5.webp";
+import img6 from "../../../assets/images/card6.webp";
+import img7 from "../../../assets/images/card7.webp";
+import img8 from "../../../assets/images/card8.webp";
+import img9 from "../../../assets/images/card9.webp";
 import ProductCard from "../../../components/ProductCard";
 
 export default function BestSellersSlider() {
