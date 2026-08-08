@@ -6,22 +6,21 @@ import FeaturedCategories from "./sections/FeaturedCategories";
 import WhyChooseUs from "./sections/WhyChooseUs";
 import PartnerBrands from "./sections/PartnerBrands";
 import Testimonials from "./sections/Testimonials";
-import A from "./sections/A"
+import HeroSlider from "./sections/HeroSlider"
 
 export default function Home() {
-    const [ setSelectedCategory] = useState(null);
-
-    return (
+    const [selectedCategory, setSelectedCategory] = useState(null);
+     return (
         <div className="w-full pt-[56px]">
-            <A />
-            <CategoryBar onSelectCategory={setSelectedCategory} />
+            <HeroSlider />
+            {/* <CategoryBar onSelectCategory={setSelectedCategory} />
             <DealsOfTheDay />
             <BestSellers />
             <FeaturedCategories />
             <WhyChooseUs />
             <PartnerBrands />
-            <Testimonials />
-        
+            <Testimonials /> */}
+
         </div>
     );
 }

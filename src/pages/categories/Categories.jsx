@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../../components/ProductCard";
+import Loader from "../../components/Loader";
 
 export default function CategoryPage() {
   const [categories, setCategories] = useState([]);
@@ -83,11 +84,11 @@ export default function CategoryPage() {
           </h2>
 
           {loading ? (
-            <p className="text-center text-gray-500">Loading...</p>
+            <Loader />
           ) : (
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
               {products.map((product) => (
-                <ProductCard key = { product.id } product = { product } />
+                <ProductCard key={product.id} product={product} />
               ))}
             </div>
           )}

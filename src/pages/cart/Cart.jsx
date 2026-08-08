@@ -4,10 +4,8 @@ import emptyCart from "../../assets/icons/empty-cart.png";
 
 export default function Cart() {
   const { cartItems, removeFromCart } = useContextGlobal();
-  console.log("Cart items:", cartItems);
 
-
-  // 🟢 BO‘SH SAVAT
+  // 🟢 empty cart
   if (!cartItems || cartItems.length === 0) {
     return (
       <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4 mt-10">

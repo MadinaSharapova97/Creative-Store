@@ -14,6 +14,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/profile/Profile";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/register";
+import NotFound from "./pages/notfound/NotFound";
 
 export default function App() {
   return (
@@ -30,7 +31,7 @@ export default function App() {
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </ContextProvider>

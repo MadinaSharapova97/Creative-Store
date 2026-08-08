@@ -17,7 +17,7 @@ export default function Login() {
     mutationFn: loginUser,
   
     onSuccess: (data) => {
-      console.log("SUCCESS:", data);
+      
   
       localStorage.setItem("user", JSON.stringify(data));
       setUser(data);
@@ -26,7 +26,6 @@ export default function Login() {
     },
   
     onError: (error) => {
-      console.log("ERROR:", error);
       alert("Login failed!");
     },
   });

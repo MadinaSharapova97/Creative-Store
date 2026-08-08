@@ -95,7 +95,7 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <Mail size={18} />
-                <span>support@myshop.com</span>
+                <span>support@CreativeStore.com</span>
               </div>
 
               <div className="flex items-center gap-2">
@@ -148,7 +148,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-white/30 mt-12 pt-6 text-center text-sm">
-          © {new Date().getFullYear()} MyShop. All rights reserved.
+          © {new Date().getFullYear()} CreativeStore. All rights reserved.
         </div>
 
       </div>

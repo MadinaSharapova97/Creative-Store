@@ -15,10 +15,6 @@ export default function Register() {
   const mutation = useMutation({
     mutationFn: registerUser,
     onSuccess: (data) => {
-      console.log("Registered:", data);
-
-      // alert("User created! Endi login qiling.");
-
       navigate("/login");
     },
     onError: () => {

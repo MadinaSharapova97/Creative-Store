@@ -5,9 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import Loader from "../../components/Loader";
 
 const fetchProducts = async () => {
-  const res = await fetch("https://dummyjson.com/products");
-  // console.log(await res.json());
-  
+  const res = await fetch("https://dummyjson.com/products");  
   return res.json();
 };
 

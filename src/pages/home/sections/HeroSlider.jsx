@@ -2,87 +2,192 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
-import "./swiper.css";
+
+// import desktop1 from "../../../assets/heroSlide/desktop1.webp";
+// import desktop2 from "../../../assets/heroSlide/desktop2.webp";
+// import desktop3 from "../../../assets/heroSlide/desktop3.webp";
+// import desktop4 from "../../../assets/heroSlide/desktop4.webp";
+// import desktop5 from "../../../assets/heroSlide/desktop5.webp";
+// import desktop6 from "../../../assets/heroSlide/desktop6.webp";
+// import desktop7 from "../../../assets/heroSlide/desktop7.webp";
+// import desktop8 from "../../../assets/heroSlide/desktop8.webp";
+// import desktop9 from "../../../assets/heroSlide/desktop9.webp";
+// import desktop10 from "../../../assets/heroSlide/desktop10.webp";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "./swiper.css";
 
-// images
-import desktop1 from "../../../assets/heroSlide/desktop1.jpg";
-import desktop2 from "../../../assets/heroSlide/desktop2.png";
-import desktop3 from "../../../assets/heroSlide/desktop3.jpg";
-import desktop4 from "../../../assets/heroSlide/desktop4.jpg";
-import desktop5 from "../../../assets/heroSlide/desktop5.jpg";
-import desktop6 from "../../../assets/heroSlide/desktop6.jpg";
-import desktop7 from "../../../assets/heroSlide/desktop7.jpg";
-import desktop8 from "../../../assets/heroSlide/desktop8.jpg";
-import desktop9 from "../../../assets/heroSlide/desktop9.jpg";
-import desktop10 from "../../../assets/heroSlide/desktop10.jpg";
+// const slides = [
+//     {
+//         id: 1,
+//         title: "Beauty Essentials",
+//         desc: "Discover premium skincare, makeup, and fragrances designed to enhance your natural beauty every day.",
+//         image: "/heroSlide/desktop1.webp",
+//         slug: "beauty",
+//     },
+//     {
+//         id: 2,
+//         title: "Modern Furniture",
+//         desc: "Transform your home with stylish, functional furniture crafted for comfort, elegance, and everyday living.",
+//         image: desktop2,
+//         slug: "furniture",
+//     },
+//     {
+//         id: 3,
+//         title: "Men's Shirts Collection",
+//         desc: "Refresh your wardrobe with premium shirts that combine modern style, comfort, and effortless confidence.",
+//         image: desktop3,
+//         slug: "mens-shirts",
+//     },
+//     {
+//         id: 4,
+//         title: "Mobile Accessories",
+//         desc: "Upgrade your devices with durable chargers, cases, earbuds, and smart accessories for every lifestyle.",
+//         image: desktop4,
+//         slug: "mobile-accessories",
+//     },
+//     {
+//         id: 5,
+//         title: "Latest Smartphones",
+//         desc: "Explore cutting-edge smartphones featuring powerful performance, stunning displays, and advanced cameras.",
+//         image: desktop5,
+//         slug: "smartphones",
+//     },
+//     {
+//         id: 6,
+//         title: "Women's Dresses",
+//         desc: "Find elegant dresses for every occasion, from casual daytime styles to timeless evening collections.",
+//         image: desktop6,
+//         slug: "womens-dresses",
+//     },
+//     {
+//         id: 7,
+//         title: "Women's Jewellery",
+//         desc: "Complete your look with beautifully crafted necklaces, rings, earrings, and bracelets made to shine.",
+//         image: desktop7,
+//         slug: "womens-jewellery",
+//     },
+//     {
+//         id: 8,
+//         title: "Men's Shoes",
+//         desc: "Step into confidence with premium shoes that deliver exceptional comfort, quality, and timeless style.",
+//         image: desktop8,
+//         slug: "mens-shoes",
+//     },
+//     {
+//         id: 9,
+//         title: "Kitchen Accessories",
+//         desc: "Cook smarter with practical kitchen essentials designed to make every meal easier and more enjoyable.",
+//         image: desktop9,
+//         slug: "kitchen-accessories",
+//     },
+//     {
+//         id: 10,
+//         title: "Home Decoration",
+//         desc: "Bring warmth and personality to your space with elegant décor pieces that inspire modern living.",
+//         image: desktop10,
+//         slug: "home-decoration",
+//     },
+// ];
+
+// export default function HeroSlider() {
+//     const navigate = useNavigate();
+
+//     return (
+//         <section className="w-full h-full pt-3 overflow-hidden hero">
+//             <Swiper
+//                 spaceBetween={0}
+           
+//                 speed={1200}
+//                 pagination={{ clickable: true }}
+//                 navigation
+//                 modules={[ Pagination, Navigation]}
+//                 className="h-full"
+//             >
+//                 {slides.map((slide, index) => (
+//                     <SwiperSlide key={slide.id}>
+//                         <div className="max-w-6xl mx-auto h-full px-4 sm:px-6 lg:px-10 xl:px-16 flex flex-col md:flex-row items-center">
+
+//                             {/* Left */}
+//                             <div className="w-full md:w-6/12 text-center md:text-left text-white">
+//                                 <h2 className="text-3xl md:text-5xl font-bold text-white text-shadow">
+//                                     {slide.title}
+//                                 </h2>
+
+//                                 <p className="mt-3 md:mt-5 text-white max-w-md mx-auto md:mx-0 text-shadow">
+//                                     {slide.desc}
+//                                 </p>
+
+//                                 <button
+//                                     onClick={() => navigate(`/category/${slide.slug}`)}
+//                                     className="mt-4 md:mt-6 px-6 py-3 bg-[#0c4b23] text-white rounded-lg"
+//                                 >
+//                                     Shop Now
+//                                 </button>
+//                             </div>
+
+//                             {/* Right */}
+//                             <img
+//                                 src={slide.image}
+//                                 alt={slide.title}
+//                                 width="460"
+//                                 height="460"
+//                                 loading={index === 0 ? "eager" : "lazy"}
+//                                 fetchPriority={index === 0 ? "high" : "auto"}
+//                                 decoding="async"
+//                                 className="w-full md:max-w-[460px] h-auto object-contain md:py-5"
+//                             />
+//                         </div>
+//                     </SwiperSlide>
+//                 ))}
+//             </Swiper>
+//         </section>
+//     );
+// }
 
 
-import mobile2 from "../../../assets/heroSlide/mobileIMG2.jpg"
-import mobile3 from "../../../assets/heroSlide/mobileIMG3.jpg";
 
-const slides = [
-  { id: 1, desktop: desktop1, mobile: mobile2, slug: "beauty" },
-  { id: 2, desktop: desktop2, mobile: mobile3, slug: "furniture" },
-  { id: 3, desktop: desktop3, mobile: mobile2, slug: "mens-shirts" },
-  { id: 4, desktop: desktop4, mobile: mobile3, slug: "mobile-accessories" },
-  { id: 5, desktop: desktop5, mobile: mobile3, slug: "smartphones" },
-  { id: 6, desktop: desktop6, mobile: mobile3, slug: "womens-dresses" },
-  { id: 7, desktop: desktop7, mobile: mobile3, slug: "womens-jewellery" },
-  { id: 8, desktop: desktop8, mobile: mobile3, slug: "kitchen-accessories" },
-  { id: 9, desktop: desktop9, mobile: mobile3, slug: "laptops" },
-  { id: 10, desktop: desktop10, mobile: mobile3, slug: "mens-watches" },
-];
-
-export default function HeroProductSlider() {
+export default function HeroSlider() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full h-[500px] md:h-[435px] overflow-hidden">
-      <Swiper
-        spaceBetween={0}
-        centeredSlides
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
-        speed={1200}
-        pagination={{ clickable: true }}
-        navigation
-        modules={[Autoplay, Pagination, Navigation]}
-        className="h-full"
-      >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide.id}>
+    <section className="w-full h-full pt-3 overflow-hidden hero">
+      <div className="max-w-6xl mx-auto h-full px-4 sm:px-6 lg:px-10 xl:px-16 flex flex-col md:flex-row items-center">
 
-            <div
-              className="relative w-full h-full cursor-pointer"
-              onClick={() => navigate(`/category/${slide.slug}`)}
-            >
-              {/* Desktop image */}
-              <img
-                src={slide.desktop}
-                alt="hero-slide-desktop"
-                className="hidden md:block w-full h-full object-cover"
-              />
+        {/* LEFT */}
+        <div className="w-full md:w-6/12 text-center md:text-left text-white">
+          <h2 className="text-3xl md:text-5xl font-bold text-white text-shadow">
+            Beauty Essentials
+          </h2>
 
-              {/* Mobile image */}
-              <img
-                src={slide.mobile}
-                alt="hero-slide-mobile"
-                className="block md:hidden w-full h-full object-cover"
-              />
+          <p className="mt-3 md:mt-5 text-white max-w-md mx-auto md:mx-0 text-shadow">
+            Discover premium skincare, makeup, and fragrances designed to
+            enhance your natural beauty every day.
+          </p>
 
-              {/* Optional hover effect */}
-              <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition duration-300"></div>
-            </div>
+          <button
+            onClick={() => navigate("/category/beauty")}
+            className="mt-4 md:mt-6 px-6 py-3 bg-[#0c4b23] text-white rounded-lg"
+          >
+            Shop Now
+          </button>
+        </div>
 
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+        {/* RIGHT */}
+        <img
+          src="/heroSlide/desktop1.webp"
+          alt="Beauty Essentials"
+          width="460"
+          height="460"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="w-full md:max-w-[460px] h-auto object-contain md:py-5"
+        />
+
+      </div>
+    </section>
   );
 }

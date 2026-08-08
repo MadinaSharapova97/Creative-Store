@@ -4,7 +4,6 @@ import { useContextGlobal } from "../context/Context";
 
 export default function ProductCard({ product }) {
   const { addToCart } = useContextGlobal();
-  console.log("Adding:", product);
 
 
   return (
