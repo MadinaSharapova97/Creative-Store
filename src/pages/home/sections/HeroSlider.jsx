@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
 
-import desktop1 from "../../../assets/heroSlide/desktop1.webp";
+// import desktop1 from "../../../assets/heroSlide/desktop1.webp";
 import desktop2 from "../../../assets/heroSlide/desktop2.webp";
 import desktop3 from "../../../assets/heroSlide/desktop3.webp";
 import desktop4 from "../../../assets/heroSlide/desktop4.webp";
