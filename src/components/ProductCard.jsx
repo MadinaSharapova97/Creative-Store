@@ -12,6 +12,8 @@ export default function ProductCard({ product }) {
         src={product.thumbnail}
         alt={product.title}
         className="w-full h-48 object-cover"
+        loading="lazy"
+        decoding="async"
       />
 
       <h3 className="mt-3 font-semibold text-gray-800">

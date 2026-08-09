@@ -61,6 +61,10 @@ export default function DealsOfTheDay() {
                                         src={item.image}
                                         alt={item.title}
                                         className="h-full object-cover p-4 transition-transform duration-500 group-hover:scale-110"
+                                        width="300"
+                                        height="300"
+                                        loading="lazy"
+                                        decoding="async"
                                     />
                                 </div>
 

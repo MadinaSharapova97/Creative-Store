@@ -60,6 +60,8 @@ export default function Testimonials() {
                   src={review.image}
                   alt={review.name}
                   className="w-14 h-14 rounded-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div>
                   <h4 className="font-semibold text-gray-800">
@@ -74,11 +76,10 @@ export default function Testimonials() {
                 {Array.from({ length: 5 }).map((_, index) => (
                   <span
                     key={index}
-                    className={`text-lg ${
-                      index < review.rating
+                    className={`text-lg ${index < review.rating
                         ? "text-yellow-400"
                         : "text-gray-300"
-                    }`}
+                      }`}
                   >
                     ★
                   </span>

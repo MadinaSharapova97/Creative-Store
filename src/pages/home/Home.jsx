@@ -13,13 +13,13 @@ export default function Home() {
      return (
         <div className="w-full pt-[56px]">
             <HeroSlider />
-            <CategoryBar onSelectCategory={setSelectedCategory} />
+            {/* <CategoryBar onSelectCategory={setSelectedCategory} />
             <DealsOfTheDay />
             <BestSellers />
             <FeaturedCategories />
             <WhyChooseUs />
             <PartnerBrands />
-            <Testimonials />
+            <Testimonials /> */}
 
         </div>
     );

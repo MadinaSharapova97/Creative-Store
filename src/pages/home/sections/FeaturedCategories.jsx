@@ -61,6 +61,10 @@ export default function FeaturedCategories() {
                 src={cat.image}
                 alt={cat.name}
                 className="w-full h-[400px] object-cover group-hover: transition duration-600"
+                width="300"
+                height="300"
+                loading="lazy"
+                decoding="async"
               />
 
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition flex items-center justify-center">

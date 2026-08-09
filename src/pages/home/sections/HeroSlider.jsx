@@ -1,9 +1,6 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-// import desktop1 from "../../../assets/heroSlide/desktop1.webp";
 import desktop2 from "../../../assets/heroSlide/desktop2.webp";
 import desktop3 from "../../../assets/heroSlide/desktop3.webp";
 import desktop4 from "../../../assets/heroSlide/desktop4.webp";
@@ -14,10 +11,7 @@ import desktop8 from "../../../assets/heroSlide/desktop8.webp";
 import desktop9 from "../../../assets/heroSlide/desktop9.webp";
 import desktop10 from "../../../assets/heroSlide/desktop10.webp";
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "./swiper.css";
+import "./heroSlide.css";
 
 const slides = [
     {
@@ -95,57 +89,111 @@ const slides = [
 export default function HeroSlider() {
     const navigate = useNavigate();
 
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    const totalSlides = slides.length;
+
+    // Next slide
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    };
+
+    // Previous slide
+    const prevSlide = () => {
+        setCurrentSlide(
+            (prev) => (prev - 1 + totalSlides) % totalSlides
+        );
+    };
+
+    // Autoplay
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % totalSlides);
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [totalSlides]);
+
+    const slide = slides[currentSlide];
+
     return (
         <section className="w-full h-full pt-3 overflow-hidden hero">
-            <Swiper
-                spaceBetween={0}
-                autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: false,
-                }}
-                speed={1200}
-                pagination={{ clickable: true }}
-                navigation
-                modules={[Autoplay, Pagination, Navigation]}
-                className="h-full"
+
+            {/* Slide */}
+            <div
+                key={slide.id}
+                className="hero-slide max-w-6xl mx-auto h-full px-4 sm:px-6 lg:px-10 xl:px-16 flex flex-col md:flex-row items-center"
             >
-                {slides.map((slide, index) => (
-                    <SwiperSlide key={slide.id}>
-                        <div className="max-w-6xl mx-auto h-full px-4 sm:px-6 lg:px-10 xl:px-16 flex flex-col md:flex-row items-center">
+                {/* LEFT */}
+                <div className="w-full md:w-6/12 text-center md:text-left text-white">
 
-                            {/* Left */}
-                            <div className="w-full md:w-6/12 text-center md:text-left text-white">
-                                <h2 className="text-3xl md:text-5xl font-bold text-white text-shadow">
-                                    {slide.title}
-                                </h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white text-shadow">
+                        {slide.title}
+                    </h2>
 
-                                <p className="mt-3 md:mt-5 text-white max-w-md mx-auto md:mx-0 text-shadow">
-                                    {slide.desc}
-                                </p>
+                    <p className="mt-3 md:mt-5 text-white max-w-md mx-auto md:mx-0 text-shadow">
+                        {slide.desc}
+                    </p>
 
-                                <button
-                                    onClick={() => navigate(`/category/${slide.slug}`)}
-                                    className="mt-4 md:mt-6 px-6 py-3 bg-[#0c4b23] text-white rounded-lg"
-                                >
-                                    Shop Now
-                                </button>
-                            </div>
+                    <button
+                        onClick={() =>
+                            navigate(`/category/${slide.slug}`)
+                        }
+                        className="mt-4 md:mt-6 px-6 py-3 bg-[#0c4b23] text-white rounded-lg"
+                    >
+                        Shop Now
+                    </button>
+                </div>
 
-                            {/* Right */}
-                            <img
-                                src={slide.image}
-                                alt={slide.title}
-                                width="460"
-                                height="460"
-                                loading={index === 0 ? "eager" : "lazy"}
-                                fetchPriority={index === 0 ? "high" : "auto"}
-                                decoding="async"
-                                className="w-full md:max-w-[460px] h-auto object-contain md:py-5"
-                            />
-                        </div>
-                    </SwiperSlide>
+                {/* RIGHT */}
+                <img
+                    src={slide.image}
+                    alt={slide.title}
+                    width="460"
+                    height="460"
+                    loading={currentSlide === 0 ? "eager" : "lazy"}
+                    fetchPriority={currentSlide === 0 ? "high" : "auto"}
+                    // decoding="async"
+                    className="w-full md:max-w-[460px] h-auto object-contain md:py-5"
+                />
+            </div>
+
+            {/* PREVIOUS BUTTON */}
+            <button
+                type="button"
+                onClick={prevSlide}
+                aria-label="Previous slide"
+                className="hero-button hero-button-prev"
+            >
+                ❮
+            </button>
+
+            {/* NEXT BUTTON */}
+            <button
+                type="button"
+                onClick={nextSlide}
+                aria-label="Next slide"
+                className="hero-button hero-button-next"
+            >
+                ❯
+            </button>
+
+            {/* PAGINATION */}
+            <div className="hero-pagination">
+                {slides.map((item, index) => (
+                    <button
+                        key={item.id}
+                        type="button"
+                        aria-label={`Go to slide ${index + 1}`}
+                        onClick={() => setCurrentSlide(index)}
+                        className={`hero-pagination-bullet ${
+                            index === currentSlide
+                                ? "hero-pagination-bullet-active"
+                                : ""
+                        }`}
+                    />
                 ))}
-            </Swiper>
+            </div>
         </section>
     );
 }

@@ -41,6 +41,8 @@ export default function CategoriesSection() {
                 src={category.image}
                 alt={category.name}
                 className="object-contain w-full h-full group-hover:scale-110 transition-transform duration-300"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <p className="capitalize font-medium text-sm text-green-600 text-center group-hover:text-green-800 transition-colors duration-300">
