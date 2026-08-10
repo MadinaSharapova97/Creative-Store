@@ -140,7 +140,7 @@ export default function HeroSlider() {
                         onClick={() =>
                             navigate(`/category/${slide.slug}`)
                         }
-                        className="hero-button-shop mt-4 md:mt-6 px-6 py-3 bg-[#0c4b23] text-white rounded-lg"
+                        className="hero-button-shop mt-4 md:mt-6 px-6 py-3 bg-[#117134] text-white rounded-lg"
                     >
                         Shop Now
                     </button>
@@ -154,7 +154,7 @@ export default function HeroSlider() {
                     height="460"
                     loading={currentSlide === 0 ? "eager" : "lazy"}
                     fetchPriority={currentSlide === 0 ? "high" : "auto"}
-                    className=" w-full md:max-w-[460px] h-auto object-contain md:py-5"
+                    className="hero-image w-full md:max-w-[460px] h-auto object-contain md:py-5"
                 />
             </div>
 

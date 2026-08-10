@@ -1,6 +1,6 @@
 /* IMAGE */
 .hero-image {
-    animation: heroImageIn 0.8s ease-out both;
+    animation: heroImageIn 1s ease-out both;
 }
 
 /* TITLE */

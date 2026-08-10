@@ -11,7 +11,7 @@ export default function ProductCard({ product }) {
       <img
         src={product.thumbnail}
         alt={product.title}
-        className="w-full h-48 object-cover"
+        className="w-full h-48 object-contain"
         loading="lazy"
         decoding="async"
       />

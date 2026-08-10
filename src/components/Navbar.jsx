@@ -4,6 +4,9 @@ import { Menu, X, ShoppingCart, User } from "lucide-react";
 import { useContextGlobal } from "../context/Context";
 import { useNavigate } from "react-router-dom";
 
+// logo
+import logo from "../assets/logo/Logo.webp";
+
 export default function Navbar() {
   const navigate = useNavigate();
   const { cartItems, user } = useContextGlobal();
@@ -25,11 +28,18 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white shadow-md top-0 left-0 right-0 z-50 fixed">
+    <nav className="bg-white shadow-md top-0 left-0 right-0 z-50 fixed py-1">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+
           {/* Logo */}
-          <div className="text-2xl font-bold text-green-600">Creative <br /> Store</div>
+          <div className="p-2 w-[125px] sm:w-[145px] md:w-[165px]  lg:w-[180px]">
+            <img
+              src={logo}
+              alt="Creative Store"
+              className="h-full w-full object-contain"
+            />
+          </div>
 
           {/* Desktop menu */}
           <div className="hidden md:flex space-x-6">
