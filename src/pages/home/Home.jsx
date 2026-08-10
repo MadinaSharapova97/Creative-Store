@@ -9,17 +9,17 @@ import Testimonials from "./sections/Testimonials";
 import HeroSlider from "./sections/HeroSlider"
 
 export default function Home() {
-    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [, setSelectedCategory] = useState(null);
      return (
         <div className="w-full pt-[56px]">
             <HeroSlider />
-            {/* <CategoryBar onSelectCategory={setSelectedCategory} />
+            <CategoryBar onSelectCategory={setSelectedCategory} />
             <DealsOfTheDay />
             <BestSellers />
             <FeaturedCategories />
-            <WhyChooseUs />
+            <WhyChooseUs /> 
             <PartnerBrands />
-            <Testimonials /> */}
+            <Testimonials />
 
         </div>
     );

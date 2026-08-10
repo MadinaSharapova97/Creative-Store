@@ -16,13 +16,13 @@ const collections = [
     {
         id: 2,
         title: "Camping Essentials",
-        image: img2,
+        image: img3,
         slug: "mens-shoes",
     },
     {
         id: 3,
         title: "Beach Collection",
-        image: img3,
+        image: img2,
         slug: "sunglasses",
     },
 ];
@@ -60,9 +60,7 @@ export default function DealsOfTheDay() {
                                     <img
                                         src={item.image}
                                         alt={item.title}
-                                        className="h-full object-cover p-4 transition-transform duration-500 group-hover:scale-110"
-                                        width="300"
-                                        height="300"
+                                        className=" h-full object-contain p-4 transition-transform duration-500 group-hover:scale-110"        
                                         loading="lazy"
                                         decoding="async"
                                     />

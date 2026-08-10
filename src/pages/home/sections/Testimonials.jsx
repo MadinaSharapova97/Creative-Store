@@ -1,9 +1,9 @@
 import React from "react";
 import FadeInSection from "../../../components/FadeInSection";
 
-import user1 from "../../../assets/customer/john.jpg";
-import user2 from "../../../assets/customer/sarah.jpg";
-import user3 from "../../../assets/customer/michael.jpg";
+import user1 from "../../../assets/customer/john.webp";
+import user2 from "../../../assets/customer/sarah.webp";
+import user3 from "../../../assets/customer/michael.webp";
 
 export default function Testimonials() {
   const reviews = [

@@ -125,13 +125,14 @@ export default function HeroSlider() {
                 className="hero-slide max-w-6xl mx-auto h-full px-4 sm:px-6 lg:px-10 xl:px-16 flex flex-col md:flex-row items-center"
             >
                 {/* LEFT */}
+                {/* LEFT */}
                 <div className="w-full md:w-6/12 text-center md:text-left text-white">
 
-                    <h2 className="text-3xl md:text-5xl font-bold text-white text-shadow">
+                    <h2 className="hero-title text-3xl md:text-5xl font-bold text-white text-shadow">
                         {slide.title}
                     </h2>
 
-                    <p className="mt-3 md:mt-5 text-white max-w-md mx-auto md:mx-0 text-shadow">
+                    <p className="hero-description mt-3 md:mt-5 text-white max-w-md mx-auto md:mx-0 text-shadow">
                         {slide.desc}
                     </p>
 
@@ -139,7 +140,7 @@ export default function HeroSlider() {
                         onClick={() =>
                             navigate(`/category/${slide.slug}`)
                         }
-                        className="mt-4 md:mt-6 px-6 py-3 bg-[#0c4b23] text-white rounded-lg"
+                        className="hero-button-shop mt-4 md:mt-6 px-6 py-3 bg-[#0c4b23] text-white rounded-lg"
                     >
                         Shop Now
                     </button>
@@ -153,8 +154,7 @@ export default function HeroSlider() {
                     height="460"
                     loading={currentSlide === 0 ? "eager" : "lazy"}
                     fetchPriority={currentSlide === 0 ? "high" : "auto"}
-                    // decoding="async"
-                    className="w-full md:max-w-[460px] h-auto object-contain md:py-5"
+                    className=" w-full md:max-w-[460px] h-auto object-contain md:py-5"
                 />
             </div>
 
@@ -186,11 +186,10 @@ export default function HeroSlider() {
                         type="button"
                         aria-label={`Go to slide ${index + 1}`}
                         onClick={() => setCurrentSlide(index)}
-                        className={`hero-pagination-bullet ${
-                            index === currentSlide
-                                ? "hero-pagination-bullet-active"
-                                : ""
-                        }`}
+                        className={`hero-pagination-bullet ${index === currentSlide
+                            ? "hero-pagination-bullet-active"
+                            : ""
+                            }`}
                     />
                 ))}
             </div>
