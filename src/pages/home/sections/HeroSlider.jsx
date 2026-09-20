@@ -4,12 +4,8 @@ import { useNavigate } from "react-router-dom";
 import desktop2 from "../../../assets/heroSlide/desktop2.webp";
 import desktop3 from "../../../assets/heroSlide/desktop3.webp";
 import desktop4 from "../../../assets/heroSlide/desktop4.webp";
-import desktop5 from "../../../assets/heroSlide/desktop5.webp";
-import desktop6 from "../../../assets/heroSlide/desktop6.webp";
-import desktop7 from "../../../assets/heroSlide/desktop7.webp";
-import desktop8 from "../../../assets/heroSlide/desktop8.webp";
-import desktop9 from "../../../assets/heroSlide/desktop9.webp";
-import desktop10 from "../../../assets/heroSlide/desktop10.webp";
+import desktop7 from "../../../assets/heroSlide/desktop5.webp";
+import desktop9 from "../../../assets/heroSlide/desktop6.webp";
 
 import "./heroSlide.css";
 
@@ -42,48 +38,24 @@ const slides = [
         image: desktop4,
         slug: "mobile-accessories",
     },
+
+
     {
         id: 5,
-        title: "Latest Smartphones",
-        desc: "Explore cutting-edge smartphones featuring powerful performance, stunning displays, and advanced cameras.",
-        image: desktop5,
-        slug: "smartphones",
-    },
-    {
-        id: 6,
-        title: "Women's Dresses",
-        desc: "Find elegant dresses for every occasion, from casual daytime styles to timeless evening collections.",
-        image: desktop6,
-        slug: "womens-dresses",
-    },
-    {
-        id: 7,
         title: "Women's Jewellery",
         desc: "Complete your look with beautifully crafted necklaces, rings, earrings, and bracelets made to shine.",
         image: desktop7,
         slug: "womens-jewellery",
     },
+
     {
-        id: 8,
-        title: "Men's Shoes",
-        desc: "Step into confidence with premium shoes that deliver exceptional comfort, quality, and timeless style.",
-        image: desktop8,
-        slug: "mens-shoes",
-    },
-    {
-        id: 9,
+        id: 6,
         title: "Kitchen Accessories",
         desc: "Cook smarter with practical kitchen essentials designed to make every meal easier and more enjoyable.",
         image: desktop9,
         slug: "kitchen-accessories",
     },
-    {
-        id: 10,
-        title: "Home Decoration",
-        desc: "Bring warmth and personality to your space with elegant décor pieces that inspire modern living.",
-        image: desktop10,
-        slug: "home-decoration",
-    },
+
 ];
 
 export default function HeroSlider() {
@@ -117,7 +89,7 @@ export default function HeroSlider() {
     const slide = slides[currentSlide];
 
     return (
-        <section className="w-full h-full pt-3 overflow-hidden hero">
+        <section className="w-full h-full pt-[4px] md:pt-2 overflow-hidden hero">
 
             {/* Slide */}
             <div
