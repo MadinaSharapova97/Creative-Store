@@ -304,15 +304,14 @@ export default function HeroSlider() {
                 className="
     hero-pagination
     absolute
-    bottom-3
+    bottom-8
     left-1/2
-    z-10
+    z-30
     flex
     -translate-x-1/2
     items-center
-    gap-1.5
-
-    sm:bottom-4
+    gap-2
+    
   "
             >
                 {slides.map((item, index) => (
