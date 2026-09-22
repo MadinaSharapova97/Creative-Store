@@ -6,8 +6,8 @@ export default function About() {
     <div className="w-full">
 
       {/* ABOUT CONTENT */}
-      <section className="pt-20 pb-14  px-4">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <section className="md:h-[calc(100vh-56px)] pt-20 md:pt-[140px] px-4">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           
           {/* TEXT */}
           <div>

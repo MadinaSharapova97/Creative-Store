@@ -1,11 +1,14 @@
+
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import desktop1 from "../../../assets/heroSlide/desktop1.webp";
 import desktop2 from "../../../assets/heroSlide/desktop2.webp";
 import desktop3 from "../../../assets/heroSlide/desktop3.webp";
 import desktop4 from "../../../assets/heroSlide/desktop4.webp";
-import desktop7 from "../../../assets/heroSlide/desktop5.webp";
-import desktop9 from "../../../assets/heroSlide/desktop6.webp";
+import desktop5 from "../../../assets/heroSlide/desktop5.webp";
+import desktop6 from "../../../assets/heroSlide/desktop6.webp";
 
 import "./heroSlide.css";
 
@@ -14,7 +17,7 @@ const slides = [
         id: 1,
         title: "Beauty Essentials",
         desc: "Discover premium skincare, makeup, and fragrances designed to enhance your natural beauty every day.",
-        image: "/heroSlide/desktop1.webp",
+        image: desktop1,
         slug: "beauty",
     },
     {
@@ -38,24 +41,20 @@ const slides = [
         image: desktop4,
         slug: "mobile-accessories",
     },
-
-
     {
         id: 5,
         title: "Women's Jewellery",
         desc: "Complete your look with beautifully crafted necklaces, rings, earrings, and bracelets made to shine.",
-        image: desktop7,
+        image: desktop5,
         slug: "womens-jewellery",
     },
-
     {
         id: 6,
         title: "Kitchen Accessories",
         desc: "Cook smarter with practical kitchen essentials designed to make every meal easier and more enjoyable.",
-        image: desktop9,
+        image: desktop6,
         slug: "kitchen-accessories",
     },
-
 ];
 
 export default function HeroSlider() {
@@ -64,20 +63,21 @@ export default function HeroSlider() {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const totalSlides = slides.length;
+    const slide = slides[currentSlide];
 
-    // Next slide
+    /* ================= NEXT ================= */
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % totalSlides);
     };
 
-    // Previous slide
+    /* ================= PREVIOUS ================= */
     const prevSlide = () => {
         setCurrentSlide(
             (prev) => (prev - 1 + totalSlides) % totalSlides
         );
     };
 
-    // Autoplay
+    /* ================= AUTOPLAY ================= */
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -86,130 +86,259 @@ export default function HeroSlider() {
         return () => clearInterval(interval);
     }, [totalSlides]);
 
-    const slide = slides[currentSlide];
-
     return (
-        <section className="w-full h-full pt-[4px] md:pt-2 overflow-hidden hero">
-
-            {/* Slide */}
+        <section
+            className="
+        hero
+        relative
+        w-full
+        overflow-hidden
+      "
+        >
+            {/* ================= SLIDE ================= */}
             <div
                 key={slide.id}
-                className="hero-slide max-w-6xl mx-auto h-full px-4 sm:px-6 lg:px-10 xl:px-16 flex flex-col md:flex-row items-center"
+                className="
+     hero-slide
+      h-[calc(100vh-56px)]
+    mx-auto
+    flex
+    w-full
+    max-w-7xl
+    flex-col
+    items-center
+    justify-center
+    gap-1
+    overflow-hidden
+    px-8
+    py-8
+    sm:px-12
+    sm:py-9
+    md:flex-row
+    md:gap-5
+    md:px-12
+    md:py-7
+    lg:gap-8
+    lg:px-16
+    xl:px-20
+  "
             >
-                {/* LEFT */}
-                {/* LEFT */}
-                <div className="w-full md:w-6/12 text-center md:text-left text-white">
+                {/* ================= TEXT ================= */}
+                <div
+                    className="
+            flex
+            w-full
+            flex-col
+            items-center
+            text-center
 
-                    <h2 className="hero-title text-3xl md:text-5xl font-bold text-white text-shadow">
+            md:w-1/2
+            md:items-start
+            md:text-left
+          "
+                >
+                    <h1
+                        className="
+              hero-title
+              max-w-[620px]
+              text-2xl
+              font-bold
+              leading-tight
+              text-white
+              drop-shadow-md
+
+              min-[375px]:text-3xl
+              sm:text-4xl
+              md:text-4xl
+              lg:text-5xl
+              xl:text-6xl
+            "
+                    >
                         {slide.title}
-                    </h2>
+                    </h1>
 
-                    <p className="hero-description mt-3 md:mt-5 text-white max-w-md mx-auto md:mx-0 text-shadow">
+                    <p
+                        className="
+              hero-description
+              mt-3
+              max-w-[500px]
+              text-sm
+              leading-relaxed
+              text-white
+              drop-shadow-md
+
+              min-[375px]:text-base
+              sm:mt-4
+              sm:text-lg
+              md:mt-5
+              md:text-base
+              lg:text-lg
+              xl:text-xl
+            "
+                    >
                         {slide.desc}
                     </p>
 
                     <button
+                        type="button"
                         onClick={() =>
                             navigate(`/category/${slide.slug}`)
                         }
-                        className="hero-button-shop mt-4 md:mt-6 px-6 py-3 bg-[#117134] text-white rounded-lg"
+                        className="
+              hero-button-shop
+              mt-5
+              rounded-lg
+              bg-[#117134]
+              px-5
+              py-2.5
+              text-sm
+              font-medium
+              text-white
+              shadow-md
+              transition
+              hover:bg-[#0d5d2a]
+              hover:shadow-lg
+
+              sm:mt-6
+              sm:px-6
+              sm:py-3
+              sm:text-base
+            "
                     >
                         Shop Now
                     </button>
                 </div>
 
-                {/* RIGHT */}
-                <img
-                    src={slide.image}
-                    alt={slide.title}
-                    width="460"
-                    height="460"
-                    loading={currentSlide === 0 ? "eager" : "lazy"}
-                    fetchPriority={currentSlide === 0 ? "high" : "auto"}
-                    className="hero-image w-full md:max-w-[460px] h-auto object-contain md:py-5"
-                />
+                {/* ================= IMAGE ================= */}
+                <div
+                    className="
+    flex
+    w-full
+    min-h-0
+    flex-1
+    items-center
+    justify-center
+
+    md:w-1/2
+    md:flex-none
+  "
+                >
+                    <img
+                        src={slide.image}
+                        alt={slide.title}
+                        width={460}
+                        height={460}
+                        loading={currentSlide === 0 ? "eager" : "eager"}
+                        fetchPriority={currentSlide === 0 ? "high" : "auto"}
+                        decoding="async"
+                        className="
+      hero-image
+      block
+      h-auto
+      max-h-[285px]
+      w-auto
+      max-w-[290px]
+      object-contain
+
+      min-[375px]:max-h-[290px]
+      min-[375px]:max-w-[300px]
+
+      sm:max-h-[350px]
+      sm:max-w-[360px]
+
+      md:max-h-[330px]
+      md:max-w-[330px]
+
+      lg:max-h-[380px]
+      lg:max-w-[390px]
+
+      xl:max-h-[420px]
+      xl:max-w-[430px]
+    "
+                    />
+                </div>
             </div>
 
-            {/* PREVIOUS BUTTON */}
+            {/* ================= PREVIOUS ================= */}
             <button
                 type="button"
                 onClick={prevSlide}
                 aria-label="Previous slide"
-                className="hero-button hero-button-prev"
+                className="
+          hero-button
+          hero-button-prev
+          absolute
+          left-2
+          top-1/2
+          z-10
+          -translate-y-1/2
+
+          sm:left-4
+        "
             >
                 ❮
             </button>
 
-            {/* NEXT BUTTON */}
+            {/* ================= NEXT ================= */}
             <button
                 type="button"
                 onClick={nextSlide}
                 aria-label="Next slide"
-                className="hero-button hero-button-next"
+                className="
+          hero-button
+          hero-button-next
+          absolute
+          right-2
+          top-1/2
+          z-10
+          -translate-y-1/2
+
+          sm:right-4
+        "
             >
                 ❯
             </button>
 
-            {/* PAGINATION */}
-            <div className="hero-pagination">
+            {/* ================= PAGINATION ================= */}
+            <div
+                className="
+    hero-pagination
+    absolute
+    bottom-3
+    left-1/2
+    z-10
+    flex
+    -translate-x-1/2
+    items-center
+    gap-1.5
+
+    sm:bottom-4
+  "
+            >
                 {slides.map((item, index) => (
                     <button
                         key={item.id}
                         type="button"
                         aria-label={`Go to slide ${index + 1}`}
+                        aria-current={
+                            index === currentSlide
+                                ? "true"
+                                : undefined
+                        }
                         onClick={() => setCurrentSlide(index)}
-                        className={`hero-pagination-bullet ${index === currentSlide
-                            ? "hero-pagination-bullet-active"
-                            : ""
-                            }`}
+                        className={`
+              hero-pagination-bullet
+              transition-all
+              duration-300
+
+              ${index === currentSlide
+                                ? "hero-pagination-bullet-active"
+                                : ""
+                            }
+            `}
                     />
                 ))}
             </div>
         </section>
     );
 }
-
-
-
-// export default function HeroSlider() {
-//   const navigate = useNavigate();
-
-//   return (
-//     <section className="w-full h-full pt-3 overflow-hidden hero">
-//       <div className="max-w-6xl mx-auto h-full px-4 sm:px-6 lg:px-10 xl:px-16 flex flex-col md:flex-row items-center">
-
-//         {/* LEFT */}
-//         <div className="w-full md:w-6/12 text-center md:text-left text-white">
-//           <h2 className="text-3xl md:text-5xl font-bold text-white text-shadow">
-//             Beauty Essentials
-//           </h2>
-
-//           <p className="mt-3 md:mt-5 text-white max-w-md mx-auto md:mx-0 text-shadow">
-//             Discover premium skincare, makeup, and fragrances designed to
-//             enhance your natural beauty every day.
-//           </p>
-
-//           <button
-//             onClick={() => navigate("/category/beauty")}
-//             className="mt-4 md:mt-6 px-6 py-3 bg-[#0c4b23] text-white rounded-lg"
-//           >
-//             Shop Now
-//           </button>
-//         </div>
-
-//         {/* RIGHT */}
-//         <img
-//           src="/heroSlide/desktop1.webp"
-//           alt="Beauty Essentials"
-//           width="460"
-//           height="460"
-//           loading="eager"
-//           fetchPriority="high"
-//           decoding="async"
-//           className="w-full md:max-w-[460px] h-auto object-contain md:py-5"
-//         />
-
-//       </div>
-//     </section>
-//   );
-// }
