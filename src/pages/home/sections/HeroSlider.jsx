@@ -111,7 +111,7 @@ export default function HeroSlider() {
     gap-1
     overflow-hidden
     px-8
-    py-8
+    py-12
     sm:px-12
     sm:py-9
     md:flex-row
