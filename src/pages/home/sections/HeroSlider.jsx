@@ -100,7 +100,7 @@ export default function HeroSlider() {
                 key={slide.id}
                 className="
      hero-slide
-      h-[calc(100vh-56px)]
+     h-[calc(100dvh-56px)]
     mx-auto
     flex
     w-full
@@ -302,16 +302,15 @@ export default function HeroSlider() {
             {/* ================= PAGINATION ================= */}
             <div
                 className="
-    hero-pagination
-    absolute
-    bottom-8
-    left-1/2
-    z-30
-    flex
-    -translate-x-1/2
-    items-center
-    gap-2
-    
+        absolute
+       !bottom-10
+        left-1/2
+        z-30
+        flex
+        -translate-x-1/2
+        items-center
+        gap-2
+        md:!bottom-4
   "
             >
                 {slides.map((item, index) => (
